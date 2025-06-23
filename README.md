@@ -1,5 +1,13 @@
-⚙️ 1. Dự án nhỏ – Structure đơn giản (Layered Architecture)
 
+## Giới thiệu
+
+Dự án này là một ứng dụng Spring Boot nhỏ, được xây dựng theo kiến trúc Layered Architecture. Ứng dụng sử dụng Spring Data JPA để tương tác với cơ sở dữ liệu và cung cấp API REST cho người dùng.
+
+## Cấu trúc Dự Án
+
+Cấu trúc thư mục của dự án như sau:
+
+```
 src/
 └── main/
     ├── java/
@@ -9,43 +17,34 @@ src/
     │       │   ├── dto/
     │       │   ├── mapper/
     │       │   └── util/
-    │
-    │       ├── config/                 # Spring config (CORS, Swagger, Security)
-    │
+    │       ├── config/                 # Cấu hình Spring (CORS, Swagger, Security)
     │       ├── controller/             # REST Controller
     │       │   ├── UserController.java
     │       │   └── ProductController.java
-    │
-    │       ├── service/                # Business logic
+    │       ├── service/                # Logic nghiệp vụ
     │       │   ├── UserService.java
     │       │   └── impl/
     │       │       └── UserServiceImpl.java
-    │
-    │       ├── repository/             # Spring Data JPA interfaces
+    │       ├── repository/             # Các interface Spring Data JPA
     │       │   └── UserRepository.java
-    │
     │       ├── entity/ or model/       # Entity JPA
     │       │   └── User.java
-    │
     │       ├── dto/                    # Data Transfer Objects
     │       │   └── UserDto.java
-    │
-    │       ├── mapper/                 # MapStruct or manual mappers
+    │       ├── mapper/                 # MapStruct hoặc các mapper thủ công
     │       │   └── UserMapper.java
-    │
-    │       └── AppApplication.java     # Main Spring Boot class
-    │
+    │       └── AppApplication.java     # Lớp chính của Spring Boot
     └── resources/
         ├── application.yml             # Cấu hình chung
-        ├── application-dev.yml         # Cấu hình dev
-        ├── application-prod.yml        # Cấu hình production
+        ├── application-dev.yml         # Cấu hình môi trường phát triển
+        ├── application-prod.yml        # Cấu hình môi trường sản xuất
         ├── static/                     # (frontend nếu dùng thymeleaf)
         └── templates/                  # (nếu dùng thymeleaf)
 
 test/
 └── java/
     └── com/example/app/
-        ├── controller/                 # Test controller (MockMvc)
-        ├── service/                    # Unit test cho service
-        └── integration/                # Integration test (test DB, API)
-
+        ├── controller/                 # Kiểm tra controller (MockMvc)
+        ├── service/                    # Kiểm tra đơn vị cho service
+        └── integration/                # Kiểm tra tích hợp (kiểm tra DB, API)
+```
